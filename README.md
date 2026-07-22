@@ -33,4 +33,3 @@ The goal is to build a complete e-commerce platform with a clean UI, optimized p
 
 ---
 
-# 📂 Project Structure
