@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "postcss": "^8.5.25",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2",
+    "tailwindcss": "^4.3.3",
+    "toastify": "^2.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
