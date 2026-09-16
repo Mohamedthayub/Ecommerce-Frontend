@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color:black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+}
+ul{
+    display: flex;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.nav-item{
+    margin-left: 10px;
+    font-size: 19px;
+}
+.cart-icon{
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+.cart-count{
+    background-color: white;
+    /* border-radius: 50%; */
+    font-weight: bold;
+    color: black;
+    border-radius:100px;
+    height: 21px;
+    width: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right:28px;
+}
