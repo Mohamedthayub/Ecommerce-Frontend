@@ -1,6 +1,8 @@
 import { assets } from "../assets/frontend_assets/assets";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
+import { useState } from "react";
 const Navbar = () => {
+    const [visible ,setVisible] = useState(false);
     return (
         <div className="flex item-center justify-between py-5 font-medium ">
             <img src={assets.logo} className="w-36"></img>
@@ -24,12 +26,33 @@ const Navbar = () => {
             </ul>
             <div className="flex items-center gap-6">
                 <img src={assets.search_icon} alt="search-icon" className="w-5 cursor-pointer"/>
-                <div className="group-relative">
+                <div className="group relative">
                     <img src={assets.profile_icon} alt=""  className="w-5 cursor-pointer"/>
-                    <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-                        
+                    <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 sm:p-2">
+                        <div className="flex flex-col gap-2 w-36 py-5 px-5 bg-slate-100 text-gray-500 rounded-md">
+                            <p className="cursor-pointer  hover:text-black">My Profile</p>
+                            <p className="cursor-pointer  hover:text-black">Orders</p>
+                            <p className="cursor-pointer  hover:text-black">Logout</p>
+                        </div>
                     </div>
                 </div>
+                <Link to='/cart' className="relative">
+                    <img src={assets.cart_icon} className="w-6 min-w-5"/>
+                    <p className="absolute right-[-1px] bottom-[-3px]   w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">10</p>
+                </Link>
+                <img src={assets.menu_icon} className="w-5 cursor-pointer sm:hidden" onClick={() => setVisible(true)}/>
+            </div>
+            <div className={`absolute  top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>    
+                <div className="flex flex-col text-gray-600">
+                    <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3"> 
+                        <img className="h-4 rotate-180" src={assets.dropdown_icon} alt=""/>
+                        <p>Back</p>
+                    </div>
+                    <NavLink className='py-2 pl-6 border' to='/'  onClick={() => setVisible(false)} >HOME</NavLink>
+                    <NavLink className='py-2 pl-6 border' to='/collection'  onClick={() => setVisible(false)} >COLLECTIONS</NavLink>
+                    <NavLink className='py-2 pl-6 border' to='/about'  onClick={() => setVisible(false)} >ABOUT</NavLink>
+                    <NavLink className='py-2 pl-6 border' to='/contact'  onClick={() => setVisible(false)} >CONTACT</NavLink>
+                </div>    
             </div>
         </div>
     )
